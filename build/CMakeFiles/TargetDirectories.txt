@@ -1,0 +1,3 @@
+/home/lenny/raytracing/build/CMakeFiles/Main.dir
+/home/lenny/raytracing/build/CMakeFiles/edit_cache.dir
+/home/lenny/raytracing/build/CMakeFiles/rebuild_cache.dir

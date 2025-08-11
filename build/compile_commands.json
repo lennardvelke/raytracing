@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/lenny/raytracing/build",
+  "command": "/usr/bin/c++  -I/home/lenny/raytracing/Main -I/home/lenny/raytracing/PUBLIC -I/home/lenny/raytracing/include  -o CMakeFiles/Main.dir/main.cpp.o -c /home/lenny/raytracing/main.cpp",
+  "file": "/home/lenny/raytracing/main.cpp",
+  "output": "CMakeFiles/Main.dir/main.cpp.o"
+}
+]
