@@ -1,3 +1,6 @@
 /home/lenny/raytracing/build/CMakeFiles/Main.dir
 /home/lenny/raytracing/build/CMakeFiles/edit_cache.dir
 /home/lenny/raytracing/build/CMakeFiles/rebuild_cache.dir
+/home/lenny/raytracing/build/dependencies/glad/CMakeFiles/glad.dir
+/home/lenny/raytracing/build/dependencies/glad/CMakeFiles/edit_cache.dir
+/home/lenny/raytracing/build/dependencies/glad/CMakeFiles/rebuild_cache.dir

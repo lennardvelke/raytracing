@@ -1,34 +1,39 @@
-#pragma once 
 
+
+#ifndef RAY_H 
+
+#define RAY_H
+
+
+#include "light.h"
 #include "circle.h"
 #include "vec3.h"
+#include <vector>
 #include <cmath>
 #include <cstdio>
+#include "option.h"
+
 
 
 typedef struct {
   Vec3 position;
   Vec3 direction;
+  Vec3 color;
 } Ray;
 
-bool fire_ray(Ray ray, Circle circle){
-  //ax^2 + bx + c
+typedef struct {
+  Vec3 hit_point = {0};
+  Circle* hit_objects = nullptr;
 
-  float t_close = dotProduct(ray.direction, circle.position - ray.position);
-printf("%f\n", t_close);
-  
-  Vec3 x_close = ray.position + t_close*ray.direction;
-  float d = distanceVec3(x_close - circle.position);
-  float a = std::sqrt(std::pow(circle.radius,2) - std::pow(d, 2));
-  
-printf("%f\n", d);
-  
+} Hit_Information;
 
-  if (d<=circle.radius) {
-    Vec3 hit_point = ray.position + (t_close - a)*ray.direction;
-    return true;
-  }
+void blendColors(Vec3* color_a, Vec3* color_b, double ration, Vec3* return_color);
 
-  return false; 
-}
+bool cast_ray(Ray* ray, std::vector<Circle* >* objects, Circle* to_be_ignored, Option* option, int depth, Material* material);
+
+bool trace(Ray* ray, std::vector<Circle* >* objects, Circle* to_be_ignored, Hit_Information* hit_point);
+
+bool collision(Ray *ray, Circle * circle, Hit_Information * hit_point);
+
+#endif // !DEBUG
 

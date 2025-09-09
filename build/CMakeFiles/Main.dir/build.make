@@ -83,17 +83,99 @@ CMakeFiles/Main.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Main.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lenny/raytracing/main.cpp -o CMakeFiles/Main.dir/main.cpp.s
 
+CMakeFiles/Main.dir/src/ray.cpp.o: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/src/ray.cpp.o: /home/lenny/raytracing/src/ray.cpp
+CMakeFiles/Main.dir/src/ray.cpp.o: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lenny/raytracing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Main.dir/src/ray.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Main.dir/src/ray.cpp.o -MF CMakeFiles/Main.dir/src/ray.cpp.o.d -o CMakeFiles/Main.dir/src/ray.cpp.o -c /home/lenny/raytracing/src/ray.cpp
+
+CMakeFiles/Main.dir/src/ray.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Main.dir/src/ray.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lenny/raytracing/src/ray.cpp > CMakeFiles/Main.dir/src/ray.cpp.i
+
+CMakeFiles/Main.dir/src/ray.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Main.dir/src/ray.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lenny/raytracing/src/ray.cpp -o CMakeFiles/Main.dir/src/ray.cpp.s
+
+CMakeFiles/Main.dir/src/camera.cpp.o: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/src/camera.cpp.o: /home/lenny/raytracing/src/camera.cpp
+CMakeFiles/Main.dir/src/camera.cpp.o: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lenny/raytracing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Main.dir/src/camera.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Main.dir/src/camera.cpp.o -MF CMakeFiles/Main.dir/src/camera.cpp.o.d -o CMakeFiles/Main.dir/src/camera.cpp.o -c /home/lenny/raytracing/src/camera.cpp
+
+CMakeFiles/Main.dir/src/camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Main.dir/src/camera.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lenny/raytracing/src/camera.cpp > CMakeFiles/Main.dir/src/camera.cpp.i
+
+CMakeFiles/Main.dir/src/camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Main.dir/src/camera.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lenny/raytracing/src/camera.cpp -o CMakeFiles/Main.dir/src/camera.cpp.s
+
+CMakeFiles/Main.dir/src/vec3.cpp.o: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/src/vec3.cpp.o: /home/lenny/raytracing/src/vec3.cpp
+CMakeFiles/Main.dir/src/vec3.cpp.o: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lenny/raytracing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Main.dir/src/vec3.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Main.dir/src/vec3.cpp.o -MF CMakeFiles/Main.dir/src/vec3.cpp.o.d -o CMakeFiles/Main.dir/src/vec3.cpp.o -c /home/lenny/raytracing/src/vec3.cpp
+
+CMakeFiles/Main.dir/src/vec3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Main.dir/src/vec3.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lenny/raytracing/src/vec3.cpp > CMakeFiles/Main.dir/src/vec3.cpp.i
+
+CMakeFiles/Main.dir/src/vec3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Main.dir/src/vec3.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lenny/raytracing/src/vec3.cpp -o CMakeFiles/Main.dir/src/vec3.cpp.s
+
+CMakeFiles/Main.dir/src/renderer.cpp.o: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/src/renderer.cpp.o: /home/lenny/raytracing/src/renderer.cpp
+CMakeFiles/Main.dir/src/renderer.cpp.o: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lenny/raytracing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Main.dir/src/renderer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Main.dir/src/renderer.cpp.o -MF CMakeFiles/Main.dir/src/renderer.cpp.o.d -o CMakeFiles/Main.dir/src/renderer.cpp.o -c /home/lenny/raytracing/src/renderer.cpp
+
+CMakeFiles/Main.dir/src/renderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Main.dir/src/renderer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lenny/raytracing/src/renderer.cpp > CMakeFiles/Main.dir/src/renderer.cpp.i
+
+CMakeFiles/Main.dir/src/renderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Main.dir/src/renderer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lenny/raytracing/src/renderer.cpp -o CMakeFiles/Main.dir/src/renderer.cpp.s
+
+CMakeFiles/Main.dir/src/glad.c.o: CMakeFiles/Main.dir/flags.make
+CMakeFiles/Main.dir/src/glad.c.o: /home/lenny/raytracing/src/glad.c
+CMakeFiles/Main.dir/src/glad.c.o: CMakeFiles/Main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lenny/raytracing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Main.dir/src/glad.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Main.dir/src/glad.c.o -MF CMakeFiles/Main.dir/src/glad.c.o.d -o CMakeFiles/Main.dir/src/glad.c.o -c /home/lenny/raytracing/src/glad.c
+
+CMakeFiles/Main.dir/src/glad.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Main.dir/src/glad.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lenny/raytracing/src/glad.c > CMakeFiles/Main.dir/src/glad.c.i
+
+CMakeFiles/Main.dir/src/glad.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Main.dir/src/glad.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lenny/raytracing/src/glad.c -o CMakeFiles/Main.dir/src/glad.c.s
+
 # Object files for target Main
 Main_OBJECTS = \
-"CMakeFiles/Main.dir/main.cpp.o"
+"CMakeFiles/Main.dir/main.cpp.o" \
+"CMakeFiles/Main.dir/src/ray.cpp.o" \
+"CMakeFiles/Main.dir/src/camera.cpp.o" \
+"CMakeFiles/Main.dir/src/vec3.cpp.o" \
+"CMakeFiles/Main.dir/src/renderer.cpp.o" \
+"CMakeFiles/Main.dir/src/glad.c.o"
 
 # External object files for target Main
 Main_EXTERNAL_OBJECTS =
 
 Main: CMakeFiles/Main.dir/main.cpp.o
+Main: CMakeFiles/Main.dir/src/ray.cpp.o
+Main: CMakeFiles/Main.dir/src/camera.cpp.o
+Main: CMakeFiles/Main.dir/src/vec3.cpp.o
+Main: CMakeFiles/Main.dir/src/renderer.cpp.o
+Main: CMakeFiles/Main.dir/src/glad.c.o
 Main: CMakeFiles/Main.dir/build.make
+Main: dependencies/glad/libglad.so
+Main: /usr/lib/x86_64-linux-gnu/libGL.so
 Main: CMakeFiles/Main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/lenny/raytracing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/lenny/raytracing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

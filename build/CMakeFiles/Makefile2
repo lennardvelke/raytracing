@@ -64,29 +64,46 @@ CMAKE_BINARY_DIR = /home/lenny/raytracing/build
 
 # The main recursive "all" target.
 all: CMakeFiles/Main.dir/all
+all: dependencies/glad/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: dependencies/glad/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/Main.dir/clean
+clean: dependencies/glad/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory dependencies/glad
+
+# Recursive "all" directory target.
+dependencies/glad/all: dependencies/glad/CMakeFiles/glad.dir/all
+.PHONY : dependencies/glad/all
+
+# Recursive "preinstall" directory target.
+dependencies/glad/preinstall:
+.PHONY : dependencies/glad/preinstall
+
+# Recursive "clean" directory target.
+dependencies/glad/clean: dependencies/glad/CMakeFiles/glad.dir/clean
+.PHONY : dependencies/glad/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/Main.dir
 
 # All Build rule for target.
-CMakeFiles/Main.dir/all:
+CMakeFiles/Main.dir/all: dependencies/glad/CMakeFiles/glad.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/lenny/raytracing/build/CMakeFiles --progress-num=1,2 "Built target Main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/lenny/raytracing/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target Main"
 .PHONY : CMakeFiles/Main.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lenny/raytracing/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lenny/raytracing/build/CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lenny/raytracing/build/CMakeFiles 0
 .PHONY : CMakeFiles/Main.dir/rule
@@ -99,6 +116,32 @@ Main: CMakeFiles/Main.dir/rule
 CMakeFiles/Main.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Main.dir/build.make CMakeFiles/Main.dir/clean
 .PHONY : CMakeFiles/Main.dir/clean
+
+#=============================================================================
+# Target rules for target dependencies/glad/CMakeFiles/glad.dir
+
+# All Build rule for target.
+dependencies/glad/CMakeFiles/glad.dir/all:
+	$(MAKE) $(MAKESILENT) -f dependencies/glad/CMakeFiles/glad.dir/build.make dependencies/glad/CMakeFiles/glad.dir/depend
+	$(MAKE) $(MAKESILENT) -f dependencies/glad/CMakeFiles/glad.dir/build.make dependencies/glad/CMakeFiles/glad.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/lenny/raytracing/build/CMakeFiles --progress-num=8,9 "Built target glad"
+.PHONY : dependencies/glad/CMakeFiles/glad.dir/all
+
+# Build rule for subdir invocation for target.
+dependencies/glad/CMakeFiles/glad.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lenny/raytracing/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dependencies/glad/CMakeFiles/glad.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lenny/raytracing/build/CMakeFiles 0
+.PHONY : dependencies/glad/CMakeFiles/glad.dir/rule
+
+# Convenience name for target.
+glad: dependencies/glad/CMakeFiles/glad.dir/rule
+.PHONY : glad
+
+# clean rule for target.
+dependencies/glad/CMakeFiles/glad.dir/clean:
+	$(MAKE) $(MAKESILENT) -f dependencies/glad/CMakeFiles/glad.dir/build.make dependencies/glad/CMakeFiles/glad.dir/clean
+.PHONY : dependencies/glad/CMakeFiles/glad.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

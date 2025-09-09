@@ -1,8 +1,44 @@
 [
 {
   "directory": "/home/lenny/raytracing/build",
-  "command": "/usr/bin/c++  -I/home/lenny/raytracing/Main -I/home/lenny/raytracing/PUBLIC -I/home/lenny/raytracing/include  -o CMakeFiles/Main.dir/main.cpp.o -c /home/lenny/raytracing/main.cpp",
+  "command": "/usr/bin/g++ -I/home/lenny/raytracing/GLOB -I/home/lenny/raytracing/HEADER_FILE -I/home/lenny/raytracing/include -I/home/lenny/raytracing/shader -I/home/lenny/raytracing/dependencies -I/home/lenny/raytracing/dependencies/glad/include -I/home/lenny/raytracing/dependencies/glad/include/glad -g -o CMakeFiles/Main.dir/main.cpp.o -c /home/lenny/raytracing/main.cpp",
   "file": "/home/lenny/raytracing/main.cpp",
   "output": "CMakeFiles/Main.dir/main.cpp.o"
+},
+{
+  "directory": "/home/lenny/raytracing/build",
+  "command": "/usr/bin/g++ -I/home/lenny/raytracing/GLOB -I/home/lenny/raytracing/HEADER_FILE -I/home/lenny/raytracing/include -I/home/lenny/raytracing/shader -I/home/lenny/raytracing/dependencies -I/home/lenny/raytracing/dependencies/glad/include -I/home/lenny/raytracing/dependencies/glad/include/glad -g -o CMakeFiles/Main.dir/src/ray.cpp.o -c /home/lenny/raytracing/src/ray.cpp",
+  "file": "/home/lenny/raytracing/src/ray.cpp",
+  "output": "CMakeFiles/Main.dir/src/ray.cpp.o"
+},
+{
+  "directory": "/home/lenny/raytracing/build",
+  "command": "/usr/bin/g++ -I/home/lenny/raytracing/GLOB -I/home/lenny/raytracing/HEADER_FILE -I/home/lenny/raytracing/include -I/home/lenny/raytracing/shader -I/home/lenny/raytracing/dependencies -I/home/lenny/raytracing/dependencies/glad/include -I/home/lenny/raytracing/dependencies/glad/include/glad -g -o CMakeFiles/Main.dir/src/camera.cpp.o -c /home/lenny/raytracing/src/camera.cpp",
+  "file": "/home/lenny/raytracing/src/camera.cpp",
+  "output": "CMakeFiles/Main.dir/src/camera.cpp.o"
+},
+{
+  "directory": "/home/lenny/raytracing/build",
+  "command": "/usr/bin/g++ -I/home/lenny/raytracing/GLOB -I/home/lenny/raytracing/HEADER_FILE -I/home/lenny/raytracing/include -I/home/lenny/raytracing/shader -I/home/lenny/raytracing/dependencies -I/home/lenny/raytracing/dependencies/glad/include -I/home/lenny/raytracing/dependencies/glad/include/glad -g -o CMakeFiles/Main.dir/src/vec3.cpp.o -c /home/lenny/raytracing/src/vec3.cpp",
+  "file": "/home/lenny/raytracing/src/vec3.cpp",
+  "output": "CMakeFiles/Main.dir/src/vec3.cpp.o"
+},
+{
+  "directory": "/home/lenny/raytracing/build",
+  "command": "/usr/bin/g++ -I/home/lenny/raytracing/GLOB -I/home/lenny/raytracing/HEADER_FILE -I/home/lenny/raytracing/include -I/home/lenny/raytracing/shader -I/home/lenny/raytracing/dependencies -I/home/lenny/raytracing/dependencies/glad/include -I/home/lenny/raytracing/dependencies/glad/include/glad -g -o CMakeFiles/Main.dir/src/renderer.cpp.o -c /home/lenny/raytracing/src/renderer.cpp",
+  "file": "/home/lenny/raytracing/src/renderer.cpp",
+  "output": "CMakeFiles/Main.dir/src/renderer.cpp.o"
+},
+{
+  "directory": "/home/lenny/raytracing/build",
+  "command": "/usr/bin/gcc -I/home/lenny/raytracing/GLOB -I/home/lenny/raytracing/HEADER_FILE -I/home/lenny/raytracing/include -I/home/lenny/raytracing/shader -I/home/lenny/raytracing/dependencies -I/home/lenny/raytracing/dependencies/glad/include -I/home/lenny/raytracing/dependencies/glad/include/glad -g -o CMakeFiles/Main.dir/src/glad.c.o -c /home/lenny/raytracing/src/glad.c",
+  "file": "/home/lenny/raytracing/src/glad.c",
+  "output": "CMakeFiles/Main.dir/src/glad.c.o"
+},
+{
+  "directory": "/home/lenny/raytracing/build",
+  "command": "/usr/bin/gcc -Dglad_EXPORTS -I/home/lenny/raytracing/GLOB -I/home/lenny/raytracing/HEADER_FILE -I/home/lenny/raytracing/include -I/home/lenny/raytracing/shader -I/home/lenny/raytracing/dependencies/glad/include -I/home/lenny/raytracing/dependencies/glad/include/glad -g -fPIC -o dependencies/glad/CMakeFiles/glad.dir/src/glad.c.o -c /home/lenny/raytracing/dependencies/glad/src/glad.c",
+  "file": "/home/lenny/raytracing/dependencies/glad/src/glad.c",
+  "output": "dependencies/glad/CMakeFiles/glad.dir/src/glad.c.o"
 }
 ]
