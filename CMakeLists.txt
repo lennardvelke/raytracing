@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.10)
 
 project(Main)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON) 
@@ -17,16 +17,16 @@ configure_file(./shader/compute_shader.glsl ${CMAKE_BINARY_DIR}/shader/compute_s
 
 file(GLOB_RECURSE SRC_FILES src/*/**.cpp)
 
-add_executable(Main main.cpp ./src/ray.cpp src/camera.cpp ./src/vec3.cpp ./src/renderer.cpp src/glad.c)
+add_executable(Main main.cpp  ./src/vec3.cpp  src/glad.c)
 
 
 
 add_subdirectory(dependencies/glad)
+add_subdirectory(dependencies/glfw)
 
+target_include_directories(Main PUBLIC ${HEADER_FILE} ./dependencies)
 
-target_include_directories(Main PUBLIC ${HEADER_FILE} dependencies)
-
-target_link_libraries(Main glfw glad dl OpenGL::GL )
+target_link_libraries(Main glfw glad OpenGL::GL )
 
 
 

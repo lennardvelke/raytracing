@@ -72,41 +72,41 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
 }
 
-void processInput(GLFWwindow* window, Camera* camera) {
+void processInput(GLFWwindow* window, Camera* camera, float deltaTime) {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
     if(glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS) {
-      camera->position.z = camera->position.z + 1.0f;
+      camera->position.z = camera->position.z + deltaTime *15 * 1.0f;
   }
     if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
-      camera->position = camera->position - camera->forward;
+      camera->position = camera->position - deltaTime * 15* camera->forward;
   }
     if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
-      camera->position = camera->position + camera->forward;
+      camera->position = camera->position + deltaTime * 15*camera->forward;
   }
     if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
-      camera->position = camera->position - camera->right;
+      camera->position = camera->position - deltaTime * 15*camera->right;
   }
     if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
-      camera->position = camera->position + camera->right;
+      camera->position = camera->position + deltaTime *15* camera->right;
   }
     if(glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS) {
-      camera->position = camera->position - camera->up;
+      camera->position = camera->position - deltaTime * 15*camera->up;
   }
     if(glfwGetKey(window, GLFW_KEY_DOWN ) == GLFW_PRESS) {
-      camera->up = normalize(rotateAroundAxis(camera->right, camera->up, 2.5f*M_PI/180.0f));
+      camera->up = normalize(rotateAroundAxis(camera->right, camera->up, deltaTime * 5*12.5f*M_PI/180.0f));
       camera->forward = normalize(crossProduct(camera->right, camera->up));
   }
     if(glfwGetKey(window, GLFW_KEY_UP ) == GLFW_PRESS) {
-      camera->up = normalize(rotateAroundAxis(camera->right, camera->up, -2.5f*M_PI/180.0f));
+      camera->up = normalize(rotateAroundAxis(camera->right, camera->up, deltaTime * 5*-12.5f*M_PI/180.0f));
       camera->forward = normalize(crossProduct(camera->right, camera->up));
   }
     if(glfwGetKey(window, GLFW_KEY_LEFT ) == GLFW_PRESS) {
-      camera->right = normalize(rotateAroundAxis(camera->up, camera->right, 2.5f*M_PI/180.0f));
+      camera->right = normalize(rotateAroundAxis(camera->up, camera->right, deltaTime *5* 12.5f*M_PI/180.0f));
       camera->forward = normalize(crossProduct(camera->right, camera->up));
   }
     if(glfwGetKey(window, GLFW_KEY_RIGHT ) == GLFW_PRESS) {
-      camera->right = normalize(rotateAroundAxis(camera->up, camera->right, -2.5f*M_PI/180.0f));
+      camera->right = normalize(rotateAroundAxis(camera->up, camera->right, deltaTime * 5*-12.5f*M_PI/180.0f));
       camera->forward = normalize(crossProduct(camera->right, camera->up));
   }
     if(glfwGetKey(window, GLFW_KEY_I ) == GLFW_PRESS) {
@@ -247,7 +247,7 @@ int main() {
     GLint timeLoc = glGetUniformLocation(shaderProgram, "u_time");
     GLint frameLoc = glGetUniformLocation(shaderProgram, "u_numAccumulatedFrames");
     GLint numberLoc = glGetUniformLocation(shaderProgram, "u_num_rays_per_pixel");
-    uint count = 0;
+    int count = 0;
     // Render Loop
   //
   //
@@ -255,11 +255,10 @@ int main() {
     float timeStart = glfwGetTime();
   float timeEnd = glfwGetTime();  
   while (!glfwWindowShouldClose(window)) {
-    timeStart = glfwGetTime();    
-    processInput(window, &camera);
+     
+    processInput(window, &camera, (glfwGetTime() - timeStart));
         count++;
-        
-
+    timeStart = glfwGetTime();   
         
         // Rendering
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);

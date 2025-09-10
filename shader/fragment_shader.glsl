@@ -1,4 +1,3 @@
-
 #version 430 core
 out vec4 FragColor;
 in vec2 TexCoord;
@@ -18,6 +17,14 @@ struct Material {
 //Object Types
 #define SPHERE 1
 #define PLANE 2
+#define TRIANGLE 3
+
+struct Triangle {
+  vec3 pointA;
+  vec3 pointB;
+  vec3 pointC;
+};
+
 
 struct Object {
   int id;
@@ -28,14 +35,14 @@ struct Object {
   float radius;
   //Plane
   vec2 dimensions; 
+  
+  //Triangle
+  Triangle triangle;
+
   Material material;
 };
 
-struct Triangle {
-  vec3 pointA;
-  vec3 pointB;
-  vec3 pointC;
-};
+
 
 
 struct Ray {
@@ -149,10 +156,10 @@ Hit collisionTriangle( Ray ray, Triangle triangle, Object object)
   Hit information;
   information.collide = false;
     vec3 edge1 = triangle.pointB - triangle.pointA;
-    vec3 edge2 = triangle.pointB - triangle.pointA;
+    vec3 edge2 = triangle.pointC - triangle.pointA;
     vec3 ray_cross_e2 = cross(ray.direction, edge2);
     float det = dot(edge1, ray_cross_e2);
-
+    const float EPSILON = 1e-6;
     if (det == 0)
         return information;    // This ray is parallel to this triangle.
 
@@ -160,20 +167,20 @@ Hit collisionTriangle( Ray ray, Triangle triangle, Object object)
     vec3 s = ray.pos - triangle.pointA;
     float u = inv_det * dot(s, ray_cross_e2);
 
-    if (u < 0 || u > 1)
+    if (u < 0.0 || u > 1.0)
         return information;
 
     vec3 s_cross_e1 = cross(s, edge1);
     float v = inv_det * dot(ray.direction, s_cross_e1);
 
-    if (v < 0 || u + v > 1 )
+    if (v < 0.0 || u + v > 1.0)
         return information;
 
     // At this stage we can compute t to find out where the intersection point is on the line.
     float t = inv_det * dot(edge2, s_cross_e1);
 
     if (t > 0) // ray intersection
-    {
+{
   information.last_hit_id = object.id;
   information.collide = true;
   information.object = object;
@@ -187,7 +194,7 @@ Hit collisionTriangle( Ray ray, Triangle triangle, Object object)
     
     return  information;
     }
-    else // This means that there is a line intersection but not a ray intersection.
+   else // This means that there is a line intersection but not a ray intersection.
         return information;
 }
 
@@ -271,6 +278,9 @@ Hit traceRay(Object[4] objects, Camera camera, Ray ray){
       case SPHERE: 
         current_info = collisionSphere(ray, objects[cur_id]);
         break;
+      case TRIANGLE: 
+        current_info = collisionTriangle(ray, objects[cur_id].triangle, objects[cur_id]);
+        break;
       default:
         break;
     }
@@ -294,7 +304,7 @@ uint getCurrentState(vec2 texelCoords, int screenWidth)
 vec3 rayCast(Ray ray, Camera camera, Object[4] objects, inout uint state){
   vec3 color = vec3(1);
   vec3 brightness = vec3(0,0,0);
-  for(int number_of_bounces = 0; number_of_bounces < 5000; number_of_bounces++){
+  for(int number_of_bounces = 0; number_of_bounces < 100; number_of_bounces++){
 
     Hit info = traceRay(objects, camera, ray);
 
@@ -328,16 +338,19 @@ void main(void){
   camera.forward = cam_forward;
 
   uint state = getCurrentState(TexCoord*800, 800);
-
+  Triangle triangle1 = Triangle(vec3(10,0,0), vec3(0,10,0), vec3(0,0,10));
+  Triangle triangle2 = Triangle(vec3(10,0,0), vec3(0,10,0), vec3(0,0,10));
+  Triangle triangle3 = Triangle(vec3(10,0,0), vec3(0,10,0), vec3(0,0,10));
+  Triangle triangle4 = Triangle(vec3(10,0,0), vec3(0,10,0), vec3(0,0,10));
   Material material = Material(vec3(1,1,1),vec3(1),1);  
   Material material2 = Material(vec3(0,0,1),vec3(0,0,1),0.0);
   Material material3 = Material(vec3(1,0,0),vec3(1,0,0),0.01);
   Material material4 = Material(vec3(0,1,0),vec3(0,0,0),1);
-  Object object = Object(0,SPHERE,vec3(12,5,0), 3, vec2(0), material);
+  Object object = Object(0,SPHERE,vec3(12,5,0), 3, vec2(0), triangle1,material);
   Ray ray = createRayForPixel(camera);
-  Object object2 = Object(1,SPHERE,vec3(15,0,0), 1, vec2(0), material2);
-  Object object3 = Object(2,SPHERE,vec3(10,0,-20), 20, vec2(0), material3);
-  Object object4 = Object(3,SPHERE,vec3(10,0,0), 1, vec2(0), material4);
+  Object object2 = Object(1,SPHERE,vec3(15,0,0), 1, vec2(0), triangle2,material2);
+  Object object3 = Object(2,SPHERE,vec3(10,0,-20), 20, vec2(0), triangle3,material3);
+  Object object4 = Object(3,SPHERE,vec3(10,0,0), 1, vec2(0), triangle4,material4);
 
   Object[] objects = {object2, object,object4, object3};
 

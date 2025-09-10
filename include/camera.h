@@ -1,7 +1,6 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
-#include "ray.h"
 #include "vec3.h"
 
 
@@ -19,7 +18,6 @@ typedef struct  {
 } Camera; 
 
 
-void createRayForPixel(Camera* camera, int pixelX, int pixelY,double scale, Ray* returnRay);
 
 
 #endif

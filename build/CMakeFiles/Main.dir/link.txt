@@ -1,1 +1,0 @@
-/usr/bin/c++ -rdynamic CMakeFiles/Main.dir/main.cpp.o CMakeFiles/Main.dir/src/ray.cpp.o CMakeFiles/Main.dir/src/camera.cpp.o CMakeFiles/Main.dir/src/vec3.cpp.o CMakeFiles/Main.dir/src/renderer.cpp.o CMakeFiles/Main.dir/src/glad.c.o -o Main  -Wl,-rpath,/home/lenny/raytracing/build/dependencies/glad -lglfw dependencies/glad/libglad.so -ldl /usr/lib/x86_64-linux-gnu/libGL.so 
